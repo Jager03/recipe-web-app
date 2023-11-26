@@ -1,0 +1,1003 @@
+openapi: 3.1.0
+x-stoplight:
+  id: s84qfn6lc4z78
+info:
+  title: open-api-recipe
+  version: "1.0"
+servers:
+  - url: "http://localhost:3000"
+paths:
+  /recipe:
+    parameters: []
+    post:
+      summary: ""
+      operationId: post-recipe
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    name: lasagnaaaaaa
+                    imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    description: "step one blah blah "
+                    ingredients:
+                      - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                    category:
+                      - name: italian
+                      - name: lactose
+                properties:
+                  name:
+                    type: string
+                  imageURL:
+                    type: string
+                  description:
+                    type: string
+                  ingredients:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                  categories:
+                    type: array
+                    items:
+                      type: object
+                      x-stoplight:
+                        id: 13nqjskkt0grg
+                      properties:
+                        name:
+                          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  name: lasagnaaaaaa
+                  imageURL: /Users/johannes/fwe/recipeBE/src/img
+                  description: "step one blah blah "
+                  ingredients:
+                    - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                  category:
+                    - name: italian
+                    - name: lactose
+              properties:
+                name:
+                  type: string
+                imageURL:
+                  type: string
+                description:
+                  type: string
+                ingredients:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                categories:
+                  type: array
+                  items:
+                    type: object
+                    x-stoplight:
+                      id: qkukbvwi9lzak
+                    properties:
+                      name:
+                        type: string
+      description: ""
+    get:
+      summary: ""
+      operationId: get-recipe
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    imageURL:
+                      type: string
+                    ingredients:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                          description:
+                            type: string
+                          amount:
+                            type: integer
+                          unit:
+                            type: string
+                          imageURL:
+                            type: string
+                    categories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                x-examples:
+                  Example 1:
+                    - id: 8db39b92-e251-4732-98e6-16e919db15ad
+                      createdAt: "2023-11-18T11:34:05.000Z"
+                      updatedAt: "2023-11-18T12:09:28.000Z"
+                      name: Lasagna
+                      description: "step one blah blah "
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      ingredients:
+                        - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                          createdAt: "2023-11-18T11:46:11.000Z"
+                          updatedAt: "2023-11-18T11:46:11.000Z"
+                          name: pasta
+                          description: 3 hole onions
+                          amount: 450
+                          unit: grams
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                        - id: 9723bc97-0b8d-42fa-88ba-9e7ee0cea731
+                          createdAt: "2023-11-18T13:24:48.000Z"
+                          updatedAt: "2023-11-18T13:24:48.000Z"
+                          name: ground meat
+                          description: 250 grams of ground meat
+                          amount: 250
+                          unit: grams
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                        - id: 45a4e64e-4133-4a9a-8ffe-d691ed13decb
+                          createdAt: "2023-11-18T13:25:19.000Z"
+                          updatedAt: "2023-11-18T13:31:04.000Z"
+                          name: milk
+                          description: 20ml of milk
+                          amount: 20
+                          unit: mili-liters
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      categories:
+                        - id: 1fc01ab3-c98f-4e61-ad06-430a83118d5a
+                          createdAt: "2023-11-18T11:38:40.000Z"
+                          updatedAt: "2023-11-18T11:38:40.000Z"
+                          name: italian
+                        - id: d9c5e576-a4ed-461c-8c81-a606e0283fee
+                          createdAt: "2023-11-18T11:38:40.000Z"
+                          updatedAt: "2023-11-18T11:38:40.000Z"
+                          name: lactose
+                    - id: 7d45ef8d-a248-40bd-a5fa-8a2c40ff6081
+                      createdAt: "2023-11-18T16:44:17.000Z"
+                      updatedAt: "2023-11-18T16:44:17.000Z"
+                      name: lasagnaaaaaa
+                      description: "step one blah blah "
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      ingredients:
+                        - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                          createdAt: "2023-11-18T11:46:11.000Z"
+                          updatedAt: "2023-11-18T11:46:11.000Z"
+                          name: pasta
+                          description: 3 hole onions
+                          amount: 450
+                          unit: grams
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      categories:
+                        - id: c6ba8af7-fd33-4afe-90c3-9615fdc5d08c
+                          createdAt: "2023-11-18T16:44:17.000Z"
+                          updatedAt: "2023-11-18T16:44:17.000Z"
+                          name: italian
+                        - id: 8f496350-e997-413d-8c7c-0617c852a395
+                          createdAt: "2023-11-18T16:44:17.000Z"
+                          updatedAt: "2023-11-18T16:44:17.000Z"
+                          name: lactose
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: recipeName
+          description: query for name of recipe
+        - schema:
+            type: string
+          in: query
+          name: categories
+          description: query for recipe in a set of categories
+  /ingredient:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    amount:
+                      type: integer
+                    unit:
+                      type: string
+                    imageURL:
+                      type: string
+                x-examples:
+                  Example 1:
+                    - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                      createdAt: "2023-11-18T11:46:11.000Z"
+                      updatedAt: "2023-11-18T11:46:11.000Z"
+                      name: pasta
+                      description: 3 hole onions
+                      amount: 450
+                      unit: grams
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    - id: 9723bc97-0b8d-42fa-88ba-9e7ee0cea731
+                      createdAt: "2023-11-18T13:24:48.000Z"
+                      updatedAt: "2023-11-18T13:24:48.000Z"
+                      name: ground meat
+                      description: 250 grams of ground meat
+                      amount: 250
+                      unit: grams
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    - id: 45a4e64e-4133-4a9a-8ffe-d691ed13decb
+                      createdAt: "2023-11-18T13:25:19.000Z"
+                      updatedAt: "2023-11-18T13:31:04.000Z"
+                      name: milk
+                      description: 20ml of milk
+                      amount: 20
+                      unit: mili-liters
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+      operationId: get-ingredient
+    post:
+      summary: ""
+      operationId: post-ingredient
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  amount:
+                    type: integer
+                  unit:
+                    type: string
+                  imageURL:
+                    type: string
+                  description:
+                    type: string
+                x-examples:
+                  Example 1:
+                    name: milk
+                    amount: 20
+                    unit: mili-liters
+                    imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    description: 250 grams of ground meat
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                amount:
+                  type: integer
+                unit:
+                  type: string
+                imageURL:
+                  type: string
+                description:
+                  type: string
+              x-examples:
+                Example 1:
+                  name: milk
+                  amount: 20
+                  unit: mili-liters
+                  imageURL: /Users/johannes/fwe/recipeBE/src/img
+                  description: 250 grams of ground meat
+  /category:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+                    name:
+                      type: string
+                x-examples:
+                  Example 1:
+                    - id: 968809d7-cf2d-436b-9b73-7261cf26f83a
+                      createdAt: "2023-11-18T11:34:05.000Z"
+                      updatedAt: "2023-11-18T11:34:05.000Z"
+                      name: italian
+                    - id: e2acd8e7-e72f-46cd-a27a-2754b81a92ef
+                      createdAt: "2023-11-18T11:34:05.000Z"
+                      updatedAt: "2023-11-18T11:34:05.000Z"
+                      name: lactose
+                    - id: 67fb4834-e9d3-4445-b035-3e66c47c0859
+                      createdAt: "2023-11-18T11:37:42.000Z"
+                      updatedAt: "2023-11-18T11:37:42.000Z"
+                      name: oven
+                    - id: 39325b93-16c8-4cab-86dc-0d197d2a9e46
+                      createdAt: "2023-11-18T11:37:42.000Z"
+                      updatedAt: "2023-11-18T11:37:42.000Z"
+                      name: salty
+                    - id: 1fc01ab3-c98f-4e61-ad06-430a83118d5a
+                      createdAt: "2023-11-18T11:38:40.000Z"
+                      updatedAt: "2023-11-18T11:38:40.000Z"
+                      name: italian
+                    - id: d9c5e576-a4ed-461c-8c81-a606e0283fee
+                      createdAt: "2023-11-18T11:38:40.000Z"
+                      updatedAt: "2023-11-18T11:38:40.000Z"
+                      name: lactose
+                    - id: 4126cd1a-65e6-436c-88c7-561440316ae1
+                      createdAt: "2023-11-18T16:28:23.000Z"
+                      updatedAt: "2023-11-18T16:28:23.000Z"
+                      name: italian
+                    - id: cc034e03-4c03-4a15-a050-6dc050edc962
+                      createdAt: "2023-11-18T16:28:23.000Z"
+                      updatedAt: "2023-11-18T16:28:23.000Z"
+                      name: lactose
+                    - id: 87805d17-0912-495d-a7ba-86bba3bdb83d
+                      createdAt: "2023-11-18T16:37:57.000Z"
+                      updatedAt: "2023-11-18T16:37:57.000Z"
+                      name: italian
+                    - id: 82f0827a-b8eb-4d9b-8427-966e75469729
+                      createdAt: "2023-11-18T16:37:57.000Z"
+                      updatedAt: "2023-11-18T16:37:57.000Z"
+                      name: lactose
+                    - id: 7e8935ff-acd0-4ea5-8827-6f092da3aacf
+                      createdAt: "2023-11-18T16:40:13.000Z"
+                      updatedAt: "2023-11-18T16:40:13.000Z"
+                      name: italian
+                    - id: 02c9c706-db31-4249-90fa-4715cf4970b1
+                      createdAt: "2023-11-18T16:40:13.000Z"
+                      updatedAt: "2023-11-18T16:40:13.000Z"
+                      name: lactose
+                    - id: 3e414973-58a3-48e2-b652-396e1053eaa3
+                      createdAt: "2023-11-18T16:42:23.000Z"
+                      updatedAt: "2023-11-18T16:42:23.000Z"
+                      name: italian
+                    - id: 234fad29-9c85-4d3f-a5e8-aede1decad2e
+                      createdAt: "2023-11-18T16:42:23.000Z"
+                      updatedAt: "2023-11-18T16:42:23.000Z"
+                      name: lactose
+                    - id: ad8daa50-c178-415f-a275-a16e9ed631f6
+                      createdAt: "2023-11-18T16:43:17.000Z"
+                      updatedAt: "2023-11-18T16:43:17.000Z"
+                      name: italian
+                    - id: 4b08fc77-a92d-41ed-a35b-aea645ef715b
+                      createdAt: "2023-11-18T16:43:17.000Z"
+                      updatedAt: "2023-11-18T16:43:17.000Z"
+                      name: lactose
+                    - id: c6ba8af7-fd33-4afe-90c3-9615fdc5d08c
+                      createdAt: "2023-11-18T16:44:17.000Z"
+                      updatedAt: "2023-11-18T16:44:17.000Z"
+                      name: italian
+                    - id: 8f496350-e997-413d-8c7c-0617c852a395
+                      createdAt: "2023-11-18T16:44:17.000Z"
+                      updatedAt: "2023-11-18T16:44:17.000Z"
+                      name: lactose
+      operationId: get-category
+    post:
+      summary: ""
+      operationId: post-category
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  createdAt:
+                    type: string
+                  updatedAt:
+                    type: string
+                  name:
+                    type: string
+                x-examples:
+                  Example 1:
+                    id: 4b08fc77-a92d-41ed-a35b-aea645ef715b
+                    createdAt: "2023-11-18T16:43:17.000Z"
+                    updatedAt: "2023-11-18T16:43:17.000Z"
+                    name: lactose
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: gj5rbmsrb4mvt
+  "/recipe/ingredient/{ingredientName}":
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    imageURL:
+                      type: string
+                    ingredients:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                          description:
+                            type: string
+                          amount:
+                            type: integer
+                          unit:
+                            type: string
+                          imageURL:
+                            type: string
+                    categories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                x-examples:
+                  Example 1:
+                    - id: 8db39b92-e251-4732-98e6-16e919db15ad
+                      createdAt: "2023-11-18T11:34:05.000Z"
+                      updatedAt: "2023-11-18T12:09:28.000Z"
+                      name: Lasagna
+                      description: "step one blah blah "
+                      imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      ingredients:
+                        - id: 45a4e64e-4133-4a9a-8ffe-d691ed13decb
+                          createdAt: "2023-11-18T13:25:19.000Z"
+                          updatedAt: "2023-11-18T13:31:04.000Z"
+                          name: milk
+                          description: 20ml of milk
+                          amount: 20
+                          unit: mili-liters
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                        - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                          createdAt: "2023-11-18T11:46:11.000Z"
+                          updatedAt: "2023-11-18T11:46:11.000Z"
+                          name: pasta
+                          description: 3 hole onions
+                          amount: 450
+                          unit: grams
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                        - id: 9723bc97-0b8d-42fa-88ba-9e7ee0cea731
+                          createdAt: "2023-11-18T13:24:48.000Z"
+                          updatedAt: "2023-11-18T13:24:48.000Z"
+                          name: ground meat
+                          description: 250 grams of ground meat
+                          amount: 250
+                          unit: grams
+                          imageURL: /Users/johannes/fwe/recipeBE/src/img
+                      categories:
+                        - id: 1fc01ab3-c98f-4e61-ad06-430a83118d5a
+                          createdAt: "2023-11-18T11:38:40.000Z"
+                          updatedAt: "2023-11-18T11:38:40.000Z"
+                          name: italian
+                        - id: d9c5e576-a4ed-461c-8c81-a606e0283fee
+                          createdAt: "2023-11-18T11:38:40.000Z"
+                          updatedAt: "2023-11-18T11:38:40.000Z"
+                          name: lactose
+      operationId: get-recipe-ingredient
+    parameters:
+      - schema:
+          type: string
+        name: ingredientName
+        in: path
+        required: true
+  "/recipe/id/{id}":
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    delete:
+      summary: ""
+      operationId: delete-recipe
+      responses:
+        "200":
+          description: OK
+    put:
+      summary: ""
+      operationId: put-recipe
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    name: lasagnaaaaaa
+                    imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    description: "step one blah blah "
+                    ingredients:
+                      - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                    category:
+                      - name: italian
+                      - name: lactose
+                properties:
+                  name:
+                    type: string
+                  imageURL:
+                    type: string
+                  description:
+                    type: string
+                  ingredients:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                  categories:
+                    type: array
+                    items:
+                      type: object
+                      x-stoplight:
+                        id: jt4o7m660m35e
+                      properties:
+                        name:
+                          type: string
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  name: lasagnaaaaaa
+                  imageURL: /Users/johannes/fwe/recipeBE/src/img
+                  description: "step one blah blah "
+                  ingredients:
+                    - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+                  category:
+                    - name: italian
+                    - name: lactose
+              properties:
+                name:
+                  type: string
+                imageURL:
+                  type: string
+                description:
+                  type: string
+                ingredients:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                categories:
+                  type: array
+                  items:
+                    type: object
+                    x-stoplight:
+                      id: yasnwb9884df4
+                    properties:
+                      name:
+                        type: string
+                      id:
+                        type: string
+                        x-stoplight:
+                          id: gfmd4wott9a4h
+                "":
+                  type: string
+                  x-stoplight:
+                    id: 303ku7iyfx1i1
+    get:
+      summary: ""
+      operationId: get-recipe-id
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    ingredients:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                          description:
+                            type: string
+                          amount:
+                            type: integer
+                          unit:
+                            type: string
+                    categories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          createdAt:
+                            type: string
+                          updatedAt:
+                            type: string
+                          name:
+                            type: string
+                x-examples:
+                  Example 1:
+                    - id: 6b82101c-6f78-4040-9dff-e09acc509534
+                      createdAt: "2023-11-22T10:51:15.000Z"
+                      updatedAt: "2023-11-23T16:27:07.000Z"
+                      name: lasagna
+                      description: update
+                      ingredients:
+                        - id: aad55b73-5e56-4e9a-a47a-000e24dc0713
+                          createdAt: "2023-11-22T10:50:41.000Z"
+                          updatedAt: "2023-11-23T17:55:16.000Z"
+                          name: milk
+                          description: 250 grams of ground meat
+                          amount: 250
+                          unit: grams
+                      categories:
+                        - id: 71000aba-29c7-40e0-b727-c53126043a18
+                          createdAt: "2023-11-22T10:51:15.000Z"
+                          updatedAt: "2023-11-22T10:51:15.000Z"
+                          name: lactose
+  "/ingredient/{id}":
+    put:
+      summary: ""
+      operationId: put-ingredient
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  amount:
+                    type: integer
+                  unit:
+                    type: string
+                  imageURL:
+                    type: string
+                  description:
+                    type: string
+                x-examples:
+                  Example 1:
+                    name: milk
+                    amount: 20
+                    unit: mili-liters
+                    imageURL: /Users/johannes/fwe/recipeBE/src/img
+                    description: 250 grams of ground meat
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                amount:
+                  type: integer
+                unit:
+                  type: string
+                imageURL:
+                  type: string
+                description:
+                  type: string
+              x-examples:
+                Example 1:
+                  name: milk
+                  amount: 20
+                  unit: mili-liters
+                  imageURL: /Users/johannes/fwe/recipeBE/src/img
+                  description: 250 grams of ground meat
+    delete:
+      summary: ""
+      operationId: delete-ingredient
+      responses:
+        "200":
+          description: OK
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  "/category/{id}":
+    put:
+      summary: ""
+      operationId: put-category
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    x-stoplight:
+                      id: isg8hk9g1znaf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  x-stoplight:
+                    id: 6bn71l3zdudpa
+    delete:
+      summary: ""
+      operationId: delete-category
+      responses:
+        "200":
+          description: OK
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+components:
+  schemas:
+    Ingredient:
+      type: object
+      x-examples:
+        Example 1:
+          id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+          createdAt: "2023-11-18T11:46:11.000Z"
+          updatedAt: "2023-11-18T11:46:11.000Z"
+          name: pasta
+          description: 3 hole onions
+          amount: 450
+          unit: grams
+          imageURL: /Users/johannes/fwe/recipeBE/src/img
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        amount:
+          type: integer
+        unit:
+          type: string
+        imageURL:
+          type: string
+      required:
+        - id
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        name:
+          type: string
+      x-examples:
+        Example 1:
+          id: 968809d7-cf2d-436b-9b73-7261cf26f83a
+          createdAt: "2023-11-18T11:34:05.000Z"
+          updatedAt: "2023-11-18T11:34:05.000Z"
+          name: italian
+    Recipe:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        imageURL:
+          type: string
+        ingredients:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              createdAt:
+                type: string
+              updatedAt:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+              amount:
+                type: integer
+              unit:
+                type: string
+              imageURL:
+                type: string
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              createdAt:
+                type: string
+              updatedAt:
+                type: string
+              name:
+                type: string
+      x-examples:
+        Example 1:
+          id: 8db39b92-e251-4732-98e6-16e919db15ad
+          createdAt: "2023-11-18T11:34:05.000Z"
+          updatedAt: "2023-11-18T12:09:28.000Z"
+          name: Lasagna
+          description: "step one blah blah "
+          imageURL: /Users/johannes/fwe/recipeBE/src/img
+          ingredients:
+            - id: 45a4e64e-4133-4a9a-8ffe-d691ed13decb
+              createdAt: "2023-11-18T13:25:19.000Z"
+              updatedAt: "2023-11-18T13:31:04.000Z"
+              name: milk
+              description: 20ml of milk
+              amount: 20
+              unit: mili-liters
+              imageURL: /Users/johannes/fwe/recipeBE/src/img
+            - id: 4879e557-c703-4cfc-b659-a2a54c26b54c
+              createdAt: "2023-11-18T11:46:11.000Z"
+              updatedAt: "2023-11-18T11:46:11.000Z"
+              name: pasta
+              description: 3 hole onions
+              amount: 450
+              unit: grams
+              imageURL: /Users/johannes/fwe/recipeBE/src/img
+            - id: 9723bc97-0b8d-42fa-88ba-9e7ee0cea731
+              createdAt: "2023-11-18T13:24:48.000Z"
+              updatedAt: "2023-11-18T13:24:48.000Z"
+              name: ground meat
+              description: 250 grams of ground meat
+              amount: 250
+              unit: grams
+              imageURL: /Users/johannes/fwe/recipeBE/src/img
+          categories:
+            - id: 1fc01ab3-c98f-4e61-ad06-430a83118d5a
+              createdAt: "2023-11-18T11:38:40.000Z"
+              updatedAt: "2023-11-18T11:38:40.000Z"
+              name: italian
+            - id: d9c5e576-a4ed-461c-8c81-a606e0283fee
+              createdAt: "2023-11-18T11:38:40.000Z"
+              updatedAt: "2023-11-18T11:38:40.000Z"
+              name: lactose
