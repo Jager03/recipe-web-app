@@ -2,7 +2,7 @@
 
 ## Getting started:
 
-In order for the database to run, it is needed to define a .env file with the following infromations: PORT = 3000
+In order for the database to run, it is needed to define a .env file with the following infromations: PORT = 3000,
 DBNAME, DBPASSWORD, DBUSER
 
 - navigate inside the recipeBE folder.
@@ -34,13 +34,13 @@ This file is responsable for the CRUD operations of the recipe entity and descri
 
 - **/ingredient/:ingredientName** this route returns all recipes corresponing to the ingredient passed in the URL.
 
-### recipe.controller.tsx
+### ingredient.controller.tsx
 
 In this file is the corresponding CRUD operation for the ingredient enity.
 
 - **/** there is only one route that handles all the CRUD. For update and delete it is neccesary to pass a id in the URL.
 
-### recipe.controller.tsx
+### category.controller.tsx
 
 In this file is the corresponding CRUD operation for the category enity.
 
