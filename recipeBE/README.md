@@ -2,6 +2,9 @@
 
 ## Getting started:
 
+In order for the database to run, it is needed to define a .env file with the following infromations: PORT = 3000
+DBNAME, DBPASSWORD, DBUSER
+
 - navigate inside the recipeBE folder.
 - run the command "npm ci"
 - start the database by running "docker-compose up"
