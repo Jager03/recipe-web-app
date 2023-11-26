@@ -34,6 +34,7 @@ import { useApiClient } from "../../api/useApiClient.ts";
 import { OptionBase } from "chakra-react-select";
 import { MultiSelect } from "react-multi-select-component";
 import { useEffect, useState } from "react";
+import { NavBarItem } from "../../layout/components/navBarItem.tsx";
 
 interface CategoryOption extends OptionBase {
   id?: string;
@@ -177,7 +178,12 @@ export const ModalCreateRecipe = ({
           {initialValues ? "Update Recipe" : "Create Recipe"}
         </ModalHeader>
         <ModalCloseButton />
-        <VStack p={5}>
+        <VStack
+          p={5}
+          display="flex"
+          justifyContent="space-between"
+          align={"self"}
+        >
           <FormLabel>Name</FormLabel>
           <Input
             value={recipeName != "" ? recipeName : ""}
@@ -194,6 +200,7 @@ export const ModalCreateRecipe = ({
             type="string"
             backgroundColor={"teal.50"}
           />
+          <br />
           <FormLabel>Ingredients</FormLabel>
           <Select
             placeholder="select ingredient"
@@ -206,12 +213,18 @@ export const ModalCreateRecipe = ({
               </option>
             ))}
           </Select>
+          <NavBarItem
+            route="/ingredient"
+            text="create new ingredient"
+            size={10}
+          />
           <Text>
             Selected ingredients:
             {ingredientsSelected.map((ingredient) => {
               return ` ${ingredient.description}, `;
             })}
           </Text>
+          <br />
           <FormLabel>Categories</FormLabel>
           <Select
             placeholder="select category"
@@ -224,6 +237,7 @@ export const ModalCreateRecipe = ({
               </option>
             ))}
           </Select>
+          <NavBarItem route="/category" text="create new category" size={10} />
           <Text>
             Selected categories:
             {categoriesSelected.map((category) => {

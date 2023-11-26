@@ -27,16 +27,16 @@ export const RecipeTable = ({
     <TableContainer overflowY={"scroll"}>
       <Table>
         <Thead>
-          <Tr>
+          <Tr display="flex" justifyContent="space-between">
             <Th>Name</Th>
-            <Th>Description</Th>
             <Th>Categories</Th>
+            <Th />
           </Tr>
         </Thead>
         <Tbody>
           {data.map((recipe) => {
             return (
-              <Tr>
+              <Tr display="flex" justifyContent="space-between">
                 <Td>
                   <NavBarItem
                     route={`/recipe/${recipe.id}`}
@@ -45,8 +45,7 @@ export const RecipeTable = ({
                   />
                 </Td>
 
-                <Td>{recipe.description}</Td>
-                <Td>
+                <Td alignSelf="end" justifySelf="end">
                   {recipe.categories?.map((category) => (
                     <Tag margin={1}>{category.name}</Tag>
                   ))}
